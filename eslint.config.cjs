@@ -5,10 +5,19 @@ module.exports = [
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'commonjs',
-    },
-    env: {
-      node: true,
-      jest: true,
+      globals: {
+        // Node globals
+        module: 'writable',
+        require: 'readonly',
+        __dirname: 'readonly',
+        process: 'readonly',
+
+        // Jest globals
+        describe: 'readonly',
+        it: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+      },
     },
     rules: {
       'no-unused-vars': 'warn',
