@@ -5,7 +5,7 @@ describe("API tests", () => {
   it("GET /health returns status ok", async () => {
     const res = await request(app).get("/health");
     expect(res.statusCode).toBe(200);
-    expect(res.body.status).toBe("ok");
+    expect(res.body.status).toBe("healthy");
   });
 
   it("GET /greet returns default greeting", async () => {
