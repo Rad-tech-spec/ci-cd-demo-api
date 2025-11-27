@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      IMAGE_NAME: radeshghi/ci-cd-demo-api
+      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd-demo-api
 
     steps:
       - name: Checkout code
@@ -27,6 +27,6 @@ jobs:
           context: .
           push: true
           tags: |
-            rad-tech-spec/ci-cd-demo-api:latest
-            rad-tech-spec/ci-cd-demo-api:${{ github.sha }}
+            radeshghi/ci-cd-demo-api:latest
+            radeshghi/ci-cd-demo-api:${{ github.sha }}
 
