@@ -2,11 +2,22 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-app.get("/health", (req, res) => res.json({ status: "healthy" }));
+app.get("/health", (req, res) => 
+  res.json({ status: "healthy" })
+);
 
 app.get("/greet", (req, res) => {
   const name = req.query.name || "World";
   res.json({ message: `Hello, ${name}!` });
+});
+
+app.get("/greet", (req, res) => {
+  const name = req.query.name || "World";
+  res.json({ message: `Hello, ${name}!` });
+});
+
+app.get('/healthz', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
 const port = process.env.PORT || 3000;
