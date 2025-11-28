@@ -16,9 +16,6 @@ app.get("/greet", (req, res) => {
   res.json({ message: `Hello, ${name}!` });
 });
 
-app.get('/healthz', (req, res) => {
-  res.status(200).json({ status: 'ok' });
-});
 
 const port = process.env.PORT || 3000;
 if (require.main === module) {

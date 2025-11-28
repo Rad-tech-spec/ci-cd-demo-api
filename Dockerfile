@@ -16,7 +16,7 @@ EXPOSE 3000
 
 # HEALTHCHECK sets up a command to check the health of the container.
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-  CMD wget -qO- http://localhost:3000/healthz || exit 1
+  CMD wget -qO- http://localhost:3000/health || exit 1
 
 # CMD ["npm", "start"] specifies the command to run the application.
 CMD ["npm", "start"]
